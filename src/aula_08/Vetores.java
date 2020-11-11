@@ -1,10 +1,7 @@
-/*
- * Programa solicita ao usuario digitar 10 numeros ou gerar aleatoriamente 
- * e em seguida informa quantos sÃ£o pares!
- */
+
 package aula_08;
 
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,7 +11,7 @@ public class Vetores {
     public static void main(String[] args) {
         int[] numeros = new int[10];
         //GERAR NUMEROS
-        System.out.println("NÃºmeros gerados: ");        
+        System.out.println("Números gerados: ");        
         for (int i = 0; i < numeros.length; i++) {
             numeros[i]= (int) (Math.random() * 100) + 1;
                         
@@ -24,25 +21,25 @@ public class Vetores {
         }
         //IMPRIMIR NUMEROS
         for (int i = 0; i < numeros.length; i++) {
-           System.out.println((i+1) + "Â° nÃºmero: " + numeros[i]);
+           System.out.println((i+1) + "° Número: " + numeros[i]);
         }
         
         //NUMEROS PARES
-        System.out.println("\nNÃºmeros pares: ");
+        System.out.println("\nNúmeros pares: ");
         int cont = 1;
         for (int i = 0; i < numeros.length; i++) {
                 if (numeros[i] % 2 == 0) {
-                    System.out.println(cont + "Â° nÃºmero: " + numeros[i]);
+                    System.out.println(cont + "° Número: " + numeros[i]);
                     cont++;
                 }
         }
         
         //NUMEROS IMPARES
-        System.out.println("\nNÃºmeros Ã­mpares: ");
+        System.out.println("\nNúmeros Ímpares: ");
         cont = 1;
         for (int i = 0; i < numeros.length; i++) {
                 if (numeros[i] % 2 != 0 ) {
-                    System.out.println(cont + "Â° nÃºmero: " + numeros[i]);
+                    System.out.println(cont + "° Número: " + numeros[i]);
                     cont++;
                 }
         }
