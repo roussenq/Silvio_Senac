@@ -11,35 +11,35 @@ public class Vetores {
     public static void main(String[] args) {
         int[] numeros = new int[10];
         //GERAR NUMEROS
-        System.out.println("Números gerados: ");        
+        System.out.println("Numeros gerados: ");        
         for (int i = 0; i < numeros.length; i++) {
             numeros[i]= (int) (Math.random() * 100) + 1;
                         
            // numeros[i]=Integer.parseInt(JOptionPane.showInputDialog("Informe o "
-             //                           + (i+1) + "Â° nÃºmero: "));
+             //                           + (i+1) + "Â° numero: "));
             
         }
         //IMPRIMIR NUMEROS
         for (int i = 0; i < numeros.length; i++) {
-           System.out.println((i+1) + "° Número: " + numeros[i]);
+           System.out.println((i+1) + "ï¿½ Numero: " + numeros[i]);
         }
         
         //NUMEROS PARES
-        System.out.println("\nNúmeros pares: ");
+        System.out.println("\nNumeros pares: ");
         int cont = 1;
         for (int i = 0; i < numeros.length; i++) {
                 if (numeros[i] % 2 == 0) {
-                    System.out.println(cont + "° Número: " + numeros[i]);
+                    System.out.println(cont + "- Numero: " + numeros[i]);
                     cont++;
                 }
         }
         
         //NUMEROS IMPARES
-        System.out.println("\nNúmeros Ímpares: ");
+        System.out.println("\nNumeros impares: ");
         cont = 1;
         for (int i = 0; i < numeros.length; i++) {
                 if (numeros[i] % 2 != 0 ) {
-                    System.out.println(cont + "° Número: " + numeros[i]);
+                    System.out.println(cont + "- Numero: " + numeros[i]);
                     cont++;
                 }
         }

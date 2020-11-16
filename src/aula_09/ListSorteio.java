@@ -16,7 +16,7 @@ public class ListSorteio {
 		int qtdAlunos = Integer.parseInt(JOptionPane.showInputDialog("Quantos alunos deseja cadastrar? "));
 		
 		for (int i = 0; i < qtdAlunos; i++) {
-			alunos.add(JOptionPane.showInputDialog((i+1) + "° aluno: "));
+			alunos.add(JOptionPane.showInputDialog((i+1) + " aluno: "));
 		}
 		
 		System.out.println("Alunos Cadastrados:\n");
