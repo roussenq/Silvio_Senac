@@ -53,9 +53,16 @@ public class UtilGerador {
         return telefone;
     }
 
-    public static void main(String[] args) {
-
-        System.out.println(gerarTelefone());
+    public static int criarNumeroAleatorioEntre2Valores(int menor, int maior) {
+        int numero = (int) (Math.random() * (maior - menor));
+        if (numero == 0) {
+            numero++;
+        }
+        numero += menor;
+        return numero;
     }
 
+    public static void main(String[] args) {
+      System.out.println(criarNumeroAleatorioEntre2Valores(50, 100));
+     }
 }
