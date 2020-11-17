@@ -20,7 +20,9 @@ public class ClienteNegocio {
     public List<Cliente> gerarListaCliente() {
         Cliente cliente01; //objeto 
         List<Cliente> clientes = new ArrayList<>(); 
+       
         int qtdCliente = UtilGerador.criarNumeroAleatorioEntre2Valores(1, 10);
+       
         for (int i = 0; i < qtdCliente; i++) {
             cliente01 = new Cliente( //criado objeto
                     UtilGerador.gerarNome(6),
