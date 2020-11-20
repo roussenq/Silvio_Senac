@@ -1,10 +1,15 @@
 /*
  *  Criar um sistema de Agenda com uma classe contato (nome, e-mail, cidade, telefone)ok
  *   - criar uma classe AgendaNegocio ok
- *   - criar um metodo que receba uma lista de contatos e retorne o total de contatos cadastrados. ok
- *   - criar um metodo que receba uma lista de contatos e um nome para pesquisar e retorne a lista que contenha o nome pesquisado
- *   - criar um metodo que receba uma lista de contatos e um numero de telefone para ser pesquisado. retorne o contato ue tenha o numero que foi pesquisado.
- *   - criar a classe de teste onde carregue a lista de contato e depois mostrar os resultados quando os metodos forem executados.
+ *   - criar um metodo que receba uma lista de contatos e retorne o 
+ *       total de contatos cadastrados. ok
+ *   - criar um metodo que receba uma lista de contatos e um nome 
+ *     para pesquisar e retorne a lista que contenha o nome pesquisado (ok)
+ *   - criar um metodo que receba uma lista de contatos e um numero de telefone
+ *    para ser pesquisado. retorne o contato ue tenha o numero que foi pesquisado. ok
+
+ *   - criar a classe de teste onde carregue a lista de contato 
+e depois mostrar os resultados quando os metodos forem executados.
  */
 package aula_12;
 
@@ -13,7 +18,7 @@ import java.util.List;
 import util.UtilGerador;
 
 /**
- *
+ * professor Silvio - Faculdade Senac Palhoça
  * @author david.maria
  */
 public class AgendaNegocio {
@@ -54,4 +59,21 @@ public class AgendaNegocio {
         System.out.println("Você pesquisou: "+nome+"\n Foram encontrados: "+contador+" contatos\n");
         return pesquisaNome;
     }
+    
+    public List<Contato> acharContatoPorTelefone(List<Contato> contatos, String telefone){
+        List<Contato> pesquisaTelefone = new ArrayList<>();
+        int cont=0;
+        for (Contato contato : contatos) {
+            if(contato.getTelefone().contains(telefone)){
+                pesquisaTelefone.add(contato);
+                cont++;
+            }
+        }
+        System.out.println("A pesquisa encontrou "+cont+" contatos com o telefone: "+telefone);
+        
+        return pesquisaTelefone;
+    }
+    
+    
+    
 }

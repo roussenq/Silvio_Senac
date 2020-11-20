@@ -27,6 +27,13 @@ public class TestaAgenda {
 
         System.out.println("\nTotal de contatos:\n"+agenda.calculaQtdContatos(contatos));
         
+        System.out.println("\n=========================\n");
+        System.out.println("\n--Pesquisa por telefone---\n");
+        String telefonePesquisa=JOptionPane.showInputDialog("Informe um n° de telefone p/ pesquisar: ");
+        List<Contato> pesquisaTelefone = agenda.acharContatoPorTelefone(contatos, telefonePesquisa);
+        System.out.println("\n==============================\n");
+        mostrarAgenda(pesquisaTelefone);
+        
       
     }
     
