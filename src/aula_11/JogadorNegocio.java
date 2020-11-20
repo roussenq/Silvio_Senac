@@ -25,7 +25,7 @@ public class JogadorNegocio {
         int qtdJogador = util.UtilGerador.criarNumeroAleatorioEntre2Valores(10, 20);
         for (int i = 0; i < qtdJogador; i++) {
             jogador = new Jogador(
-                    "Nome: " + UtilGerador.gerarNome(6),
+                    "Nome: " + UtilGerador.gerarNome(),
                     "Nivel: " + UtilGerador.criarNumeroAleatorioEntre2Valores(50, 100),
                     UtilGerador.gerarNumInteiro(1),
                     UtilGerador.gerarNumInteiro(1)

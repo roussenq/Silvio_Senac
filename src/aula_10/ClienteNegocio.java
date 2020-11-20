@@ -25,8 +25,8 @@ public class ClienteNegocio {
        
         for (int i = 0; i < qtdCliente; i++) {
             cliente01 = new Cliente( //criado objeto
-                    UtilGerador.gerarNome(6),
-                    UtilGerador.gerarEmail(6, "senac"),
+                    UtilGerador.gerarNome(),
+                    UtilGerador.gerarEmail("senac"),
                     UtilGerador.gerarTelefone(),
                     UtilGerador.gerarNumInteiro(4)
             );

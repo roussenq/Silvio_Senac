@@ -1,11 +1,3 @@
-/*
- *  Criar um sistema de Agenda com uma classe contato (nome, e-mail, cidade, telefone)
- *   - criar uma classe AgendaNegocio
- *   - criar um metodo que receba uma lista de contatos e retorne o total de contatos cadastrados.
- *   - criar um metodo que receba uma lista de contatos e um nome para pesquisar e retorne a lista que contenha o nome pesquisado
- *   - criar um metodo que receba uma lista de contatos e um numero de telefone para ser pesquisado. retorne o contato ue tenha o numero que foi pesquisado.
- *   - criar a classe de teste onde carregue a lista de contato e depois mostrar os resultados quando os metodos forem executados.
- */
 package aula_12;
 
 /**

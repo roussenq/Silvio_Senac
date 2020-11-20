@@ -11,23 +11,21 @@ package util;
  */
 public class UtilGerador {
 
-    public static String gerarNome(int qtd) {
+    public static String gerarNome() {
         String nomeGerado = "";
-        String[] minuscula = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
-            "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
-            "u", "v", "w", "x", "y", "z",};
-        String[] maiuscula = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
-            "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
-            "U", "V", "W", "X", "Y", "Z"};
+        String[] sobrenomes = {"Silva", "Souza", "Lucas", "Hoffman", "Maria", "Conceição", "da Silva", "da Luz", "Joaquim", "Luiz Inácio",
+            "Kronnus", "Cassol", "da Lagoa", "Farias", "Torrone", "Pé de Feijão", "Querubin", "Pobre", "Destri", "Carrito",
+            "do Pomar", "Tapera", "dos Anjos", "Silva Sauro", "Orson", "Campos"};
+        String[] nomes = {"Alice", "Bianca", "Cyntia", "Daiana", "Ester", "Fernanda", "Gabriela", "Hanna", "Inácia", "Juliani",
+            "Karen", "Leticia", "Marianne", "Nicole", "Olivia", "Pricila", "Quenia", "Raquel", "Sabrina", "Tuane",
+            "Uvalina", "Vanessa", "Wacari", "Xuxa", "Yanne", "Zinna", "André", "Adilson", "Carlos", "David", "Eduardo", "Fernando", "Gustavo", "Henrique", "Inácio", "João",
+            "Kevin", "Lucas", "Marcos", "Nicholas", "Otavio", "Paulo", "Querubin", "Rico", "Saulo", "Thiago",
+            "Ulisses", "Victor", "Wagner", "Xico", "York", "Zucatto"};
 
-        int indice1;
-        int indice2 = (int) (Math.random() * maiuscula.length);
+        int indice1 = (int) (Math.random() * sobrenomes.length);
+        int indice2 = (int) (Math.random() * nomes.length);
+        nomeGerado += nomes[indice2] + " " + sobrenomes[indice1];
 
-        for (int i = 0; i < (qtd - 1); i++) {
-            indice1 = (int) (Math.random() * minuscula.length);
-            nomeGerado += minuscula[indice1];
-        }
-        nomeGerado = maiuscula[indice2] + nomeGerado;
         return nomeGerado;
     }
 
@@ -42,8 +40,8 @@ public class UtilGerador {
         return numero;
     }
 
-    public static String gerarEmail(int qtd, String dominio) {
-        String emailGerado = gerarNome(qtd) + "@" + dominio + ".com.br";
+    public static String gerarEmail(String dominio) {
+        String emailGerado = gerarNome() + "@" + dominio + ".com.br";
         return emailGerado;
     }
 
@@ -63,6 +61,6 @@ public class UtilGerador {
     }
 
     public static void main(String[] args) {
-      System.out.println(criarNumeroAleatorioEntre2Valores(50, 100));
-     }
+        System.out.println(criarNumeroAleatorioEntre2Valores(50, 100));
+    }
 }
