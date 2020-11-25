@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package aula_13;
 
-/**
- *
- * @author david.maria
- */
 public class Livro {
 
     private String nome;
-    private int anoEdicao;
+    private String anoEdicao;
     private String editora;
     private String autor;
     private String descricao;
@@ -20,7 +11,7 @@ public class Livro {
     public Livro() {
     }
 
-    public Livro(String nome, int anoEdicao, String editora, String autor, String descricao) {
+    public Livro(String nome, String anoEdicao, String editora, String autor, String descricao) {
         this.nome = nome;
         this.anoEdicao = anoEdicao;
         this.editora = editora;
@@ -36,11 +27,11 @@ public class Livro {
         this.nome = nome;
     }
 
-    public int getAnoEdicao() {
+    public String getAnoEdicao() {
         return anoEdicao;
     }
 
-    public void setAnoEdicao(int anoEdicao) {
+    public void setAnoEdicao(String anoEdicao) {
         this.anoEdicao = anoEdicao;
     }
 
