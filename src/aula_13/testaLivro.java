@@ -1,6 +1,5 @@
 package aula_13;
 
-import com.sun.xml.internal.ws.client.ContentNegotiation;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -22,8 +21,12 @@ public class testaLivro {
         int edicao = Integer.parseInt(JOptionPane.showInputDialog("Informe a edição a ser pesquisada: "));
 
         mostrarLista(negocio.pesquisarLivrosPorEdicao(livros, edicao));
+
         String pesquisarEditora = JOptionPane.showInputDialog("Qual editora quer pesquisar? ");
         mostrarLista(negocio.pesquisarLivrosPorEditora(livros, pesquisarEditora));
+
+        String pesquisarAutor = JOptionPane.showInputDialog("Informe o autor a ser pesquisado: ");
+        mostrarLista(negocio.pesquisaLivrosPorAutor(livros, pesquisarAutor));
 
     }
 
@@ -31,7 +34,7 @@ public class testaLivro {
         for (Livro livro : livros) {
             System.out.println(livro.getNome());
             System.out.println("Ano Edição: " + livro.getAnoEdicao());
-            System.out.println(livro.getAutor());
+            System.out.println("Autor:" + livro.getAutor());
             System.out.println(livro.getDescricao());
             System.out.println("Editora: " + livro.getEditora());
             System.out.println("========================================");

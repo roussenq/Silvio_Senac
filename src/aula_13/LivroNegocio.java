@@ -3,9 +3,9 @@
  *  - criar uma classe LivroNegocio ok
     - criar metodo que gere a lista de livros. ok
     - criar um metodo que receba a lista de livros como parametro e pesquise livros por edições. ok
-    - criar um metodo que receba a lista de livros e o nome da editora e pesquisa o livro da editora.
-    - criar um metodo que receba a lista de livros e o nome do autor e informe qtd de livros do autor.
-    - criar uma classe de teste onde caregue a lista de livros e carregue seus metodos para que possa ser executado os testes.
+    - criar um metodo que receba a lista de livros e o nome da editora e pesquisa o livro da editora. ok
+    - criar um metodo que receba a lista de livros e o nome do autor e informe qtd de livros do autor. ok
+    - criar uma classe de teste onde caregue a lista de livros e carregue seus metodos para que possa ser executado os testes.ok
  * 
  */
 package aula_13;
@@ -16,7 +16,6 @@ import util.UtilGerador;
 
 /**
  * Professor Silvio - Faculda Senac Palhoça
- *
  * @author david.maria
  */
 public class LivroNegocio {
@@ -30,7 +29,7 @@ public class LivroNegocio {
                     "Nome: " + UtilGerador.gerarNome(),
                     "201" + UtilGerador.gerarNumInteiro("1"),
                     UtilGerador.sortearEditora(),
-                    "Autor: " + UtilGerador.gerarNome(),
+                    UtilGerador.gerarNome(),
                     "Descrição: " + UtilGerador.gerarDescricao()
             );
             livros.add(livro);
@@ -66,6 +65,21 @@ public class LivroNegocio {
         System.out.println("\nQuantidade de livros com editora " + editora + ": " + contador);
         System.out.println("\n========================================");
         return editoras;
+    }
+    
+    public List<Livro> pesquisaLivrosPorAutor(List<Livro> livros, String autor){
+        List<Livro> autores = new ArrayList<>();
+        int contador = 0;
+        for (Livro livro : livros) {
+            if(livro.getAutor().equalsIgnoreCase(autor)){
+                autores.add(livro);
+                contador++;
+            }
+        }
+        System.out.println("\n========================================");
+        System.out.println("\nQuantidade de livros com autor " + autor + ": " + contador);
+        System.out.println("\n========================================");
+        return autores;
     }
 
 }
