@@ -108,7 +108,27 @@ public class UtilGerador {
         return numero;
     }
 
-    public static void main(String[] args) {
-        System.out.println(criarNumeroAleatorioEntre2Valores(50, 100));
+    public static String gerarLogin() {
+        String login = "";
+        String[] letras = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+            "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "z"};
+        int indice = 0;
+        for (int i = 0; i < UtilGerador.gerarNumInteiro(1); i++) {
+            indice = (int) (Math.random() * letras.length);
+            login += letras[indice];
+        }
+        return login;
+    }
+
+    public static String gerarSenha() {
+        String senha = "";
+        String[] letras = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+            "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "z"};
+        int indice = 0;
+        for (int i = 0; i < UtilGerador.gerarNumInteiro(1); i++) {
+            indice = (int) (Math.random() * letras.length);
+            senha += letras[indice];
+        }
+        return senha;
     }
 }

@@ -19,14 +19,21 @@ public class TestaConta {
 
         mostrarConta(conta1);
 
-        Conta pesquisa = negocio.buscarConta(JOptionPane.showInputDialog("Qual conta quer pesquisar? "));
-        mostrarConta(pesquisa);
+        Conta pesquisaContaPorNumero = negocio.buscarConta(JOptionPane.showInputDialog("Qual conta quer pesquisar? "));
+        mostrarConta(pesquisaContaPorNumero);
+        
+        String login=JOptionPane.showInputDialog("Informe seu Login: ");
+        String senha=JOptionPane.showInputDialog("Informe sua Senha: ");
+        
+        Conta pesquisaPorLoginSenha = negocio.buscarContaPorLoginSenha(login, senha);
+        mostrarConta(pesquisaPorLoginSenha);
 
     }
 
     public static void mostrarConta(Conta conta) {
         if (conta == null) {
         } else {
+            System.out.println("\n=====================================\n");
             System.out.println("Cliente:" + conta.getCliente());
             System.out.println("N° conta:" + conta.getNumeroConta());
             System.out.println("Saldo:" + conta.getSaldo());

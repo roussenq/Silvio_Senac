@@ -7,8 +7,8 @@
  * - criar um metodo para carregar uma conta e gravar na lista contas, não pode
  * ter conta com o mesmo número. Os números das contas devem ter 6 dígitos. ok
  * - cria um método que pesquise uma conta passando o numero. ok
+ * - criar um metodo que receba o login e senha e retorne a conta. ok
  
-* - criar um metodo que receba o login e senha e retorne a conta.
  * - criar um metodo que faça saque na conta caso ela tenha limite. É obrigatório
  *   para a operação fazer validação com o login e senha da conta.
  * - criar um método que faça deposito na conta. É necessário passar o número da conta.
@@ -34,9 +34,9 @@ public class ContaNegocio {
                 UtilGerador.gerarNome(),
                 UtilGerador.gerarNumInteiro("6"),
                 1000.56f,
-                3000,
-                UtilGerador.gerarNome() + UtilGerador.gerarNumInteiro("1"),
-                UtilGerador.gerarNome() + UtilGerador.gerarNumInteiro("3")
+                3000.02f,
+                UtilGerador.gerarLogin(),
+                UtilGerador.gerarSenha()
         );
         for (Conta conta : contas) {
             if (conta.getNumeroConta().equals(novaConta.getNumeroConta())) {
@@ -59,6 +59,20 @@ public class ContaNegocio {
             System.out.println("Conta não encontrada!");
         }
         return conta;
+    }
+    
+    public Conta buscarContaPorLoginSenha(String login, String senha){
+        Conta pesquisa=null;
+        
+        for (Conta conta : contas) {
+            if(conta.getLogin().equalsIgnoreCase(login) && conta.getSenha().equalsIgnoreCase(senha)){
+                pesquisa=conta;
+                System.out.println("Sucesso!");
+            } else{
+                System.out.println("erro!");
+            }
+        }
+        return pesquisa;
     }
 
 }
