@@ -27,6 +27,9 @@ public class TestaConta {
         
         Conta pesquisaPorLoginSenha = negocio.buscarContaPorLoginSenha(login, senha);
         mostrarConta(pesquisaPorLoginSenha);
+        
+        System.out.println("Saque:\n");
+        negocio.realizarSaque(login, senha, 2000);
 
     }
 

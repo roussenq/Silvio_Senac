@@ -1,19 +1,3 @@
-/*
- * Crie uma classe Conta onde tenha os atributos: cliente, numero de conta, saldo, limite,
- * login e senha.
- * - criar a classe ContaNegocio
- * - declarar a lista de conta dentro da classe contaNegocio como variavel
- * de instancia com seu objeto ArrayList. De o nome de contas para a variavel
- * - criar um metodo para carregar uma conta e gravar na lista contas, 
- * não pode ter conta com o mesmo número. Os números das contas devem ter 6 dígitos. exemplo: 123456.
- * - cria um método que pesquise uma conta passando o numero.
- * - criar um metodo que receba o login e senha e retorne a conta.
- * - criar um metodo que faça saque na conta caso ela tenha limite. É obrigatório
- *   para a operação fazer validação com o login e senha da conta.
- * - criar um método que faça deposito na conta. É necessário passar o número da conta.
- * - criar um método que retorne o saldo de uma conta é preciso fazer o login e senha.
- *
- */
 package aula_14;
 
 /**
