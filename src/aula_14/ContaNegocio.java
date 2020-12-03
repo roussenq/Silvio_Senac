@@ -10,9 +10,8 @@
  * - criar um metodo que receba o login e senha e retorne a conta. ok
  * - criar um metodo que faça saque na conta caso ela tenha limite. É obrigatório
  *   para a operação fazer validação com o login e senha da conta. ok
-
-* - criar um método que faça deposito na conta. É necessário passar o número da conta.
- * - criar um método que retorne o saldo de uma conta é preciso fazer o login e senha.
+* - criar um método que faça deposito na conta. É necessário passar o número da conta.ok
+ * - criar um método que retorne o saldo de uma conta é preciso fazer o login e senha. ok
  *
  */
 package aula_14;
@@ -29,7 +28,7 @@ public class ContaNegocio {
 
     private List<Conta> contas = new ArrayList<>();
 
-    public Conta gerarConta() {
+    public String gerarConta() {
         Conta novaConta = new Conta(
                 UtilGerador.gerarNome(),
                 UtilGerador.gerarNumInteiro("6"),
@@ -44,8 +43,9 @@ public class ContaNegocio {
             }
         }
         contas.add(novaConta);
-        System.out.println("Conta criada com Sucesso!");
-        return novaConta;
+        return "Conta criada com Sucesso!\nConta n°" + novaConta.getNumeroConta()
+                + "\nLogin: " + novaConta.getLogin()
+                + "\nSenha: " + novaConta.getSenha();
     }
 
     public Conta buscarConta(String numeroConta) {
@@ -85,22 +85,53 @@ public class ContaNegocio {
                 if (clienteConta.getSaldo() >= valorSaque) {
                     float saldo = clienteConta.getSaldo() - valorSaque;
                     clienteConta.setSaldo(saldo);
+                    saqueOK(valorSaque, clienteConta);
                 } else if (clienteConta.getSaldo() < valorSaque && (clienteConta.getLimite() + clienteConta.getSaldo()) >= valorSaque) {
                     float novoSaldo = clienteConta.getSaldo() - valorSaque;
                     float novoLimite = (clienteConta.getSaldo() + clienteConta.getLimite()) - valorSaque;
                     clienteConta.setLimite(novoLimite);
                     clienteConta.setSaldo(novoSaldo);
+                    saqueOK(valorSaque, clienteConta);
+                } else {
+                    System.out.println("Saldo Insuficiente!");
                 }
-                System.out.println("Saque de: R$" + valorSaque + " efetuado com"
-                        + " Sucesso\nNovo saldo: R$" + clienteConta.getSaldo()
-                        + "\nNovo limite: R$" + clienteConta.getLimite());
                 break;
             } else {
                 System.out.println("Login/Senha inválidos");
             }
         }
-
         return mensagem;
+    }
+
+    private void saqueOK(float valorSaque, Conta clienteConta) {
+        System.out.println("Saque de: R$" + valorSaque + " efetuado com"
+                + " Sucesso\nNovo saldo: R$" + clienteConta.getSaldo()
+                + "\nNovo limite: R$" + clienteConta.getLimite());
+    }
+
+    public String realizaDeposito(String numeroConta, float valorDeposito) {
+        for (Conta conta : contas) {
+            if (conta.getNumeroConta().equals(numeroConta)) {
+                float saldo = conta.getSaldo() + valorDeposito;
+                conta.setSaldo(saldo);
+                break;
+            } else {
+                System.out.println("Conta Inválida!");
+            }
+        }
+        return "Deposito realizado com sucesso!";
+    }
+
+    public void mostrarSaldo(String login, String senha) {
+        float saldo;
+        for (Conta conta : contas) {
+            if (conta.getLogin().equals(login) && conta.getSenha().equals(senha)) {
+                System.out.println("Saldo: R$" + conta.getSaldo());
+                break;
+            } else {
+                System.out.println("Login/Senha inválidos");
+            }
+        }
     }
 
 }

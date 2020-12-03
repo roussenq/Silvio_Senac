@@ -70,7 +70,7 @@ public class UtilGerador {
         int numero;
         String numeroGerado = "";
         for (int i = 0; i < qtd; i++) {
-            numero = (int) (Math.random() * 10);
+            numero = (int) ((Math.random() * 9)+1);
             numeroGerado += numero;
         }
         numero = Integer.parseInt(numeroGerado);
@@ -111,9 +111,9 @@ public class UtilGerador {
     public static String gerarLogin() {
         String login = "";
         String[] letras = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
-            "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "z"};
-        int indice = 0;
-        for (int i = 0; i < UtilGerador.gerarNumInteiro(1); i++) {
+            "n", "o", "p", "q", "r", "s", "t", "u", "v", "x","y", "z"};
+        int indice;
+        for (int i = 0; i < UtilGerador.criarNumeroAleatorioEntre2Valores(5, 10); i++) {
             indice = (int) (Math.random() * letras.length);
             login += letras[indice];
         }
@@ -125,10 +125,15 @@ public class UtilGerador {
         String[] letras = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
             "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "z"};
         int indice = 0;
-        for (int i = 0; i < UtilGerador.gerarNumInteiro(1); i++) {
+        for (int i = 0; i < UtilGerador.criarNumeroAleatorioEntre2Valores(5, 10); i++) {
             indice = (int) (Math.random() * letras.length);
             senha += letras[indice];
         }
         return senha;
+    }
+    
+    public static void main(String[] args) {
+        String teste = gerarLogin();
+        System.out.println(teste);
     }
 }
