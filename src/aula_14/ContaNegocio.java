@@ -53,6 +53,7 @@ public class ContaNegocio {
         for (Conta conta1 : contas) {
             if (conta1.getNumeroConta().equals(numeroConta)) {
                 conta = conta1;
+                break;
             }
         }
         if (conta == null) {
@@ -68,6 +69,7 @@ public class ContaNegocio {
             if (conta.getLogin().equalsIgnoreCase(login) && conta.getSenha().equalsIgnoreCase(senha)) {
                 pesquisa = conta;
                 System.out.println("Sucesso!");
+                break;
             } else {
                 System.out.println("erro!");
             }
