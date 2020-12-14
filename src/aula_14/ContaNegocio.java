@@ -10,7 +10,7 @@
  * - criar um metodo que receba o login e senha e retorne a conta. ok
  * - criar um metodo que faça saque na conta caso ela tenha limite. É obrigatório
  *   para a operação fazer validação com o login e senha da conta. ok
-* - criar um método que faça deposito na conta. É necessário passar o número da conta.ok
+ * - criar um método que faça deposito na conta. É necessário passar o número da conta.ok
  * - criar um método que retorne o saldo de uma conta é preciso fazer o login e senha. ok
  *
  */
@@ -30,10 +30,10 @@ public class ContaNegocio {
 
     public String gerarConta() {
         Conta novaConta = new Conta(
-                UtilGerador.gerarNome(),
-                UtilGerador.gerarNumInteiro("6"),
-                1000.56f,
-                3000.02f,
+                UtilGerador.gerarNome(), //cliente
+                UtilGerador.gerarNumInteiro("6"), //numeroConta
+                1000.56f, //saldo
+                3000.02f, //limite
                 UtilGerador.gerarLogin(),
                 UtilGerador.gerarSenha()
         );
@@ -49,24 +49,25 @@ public class ContaNegocio {
     }
 
     public Conta buscarConta(String numeroConta) {
-        Conta conta = null;
-        for (Conta conta1 : contas) {
-            if (conta1.getNumeroConta().equals(numeroConta)) {
-                conta = conta1;
+        Conta pesquisa = null;
+        for (Conta conta : contas) {
+            if (conta.getNumeroConta().equals(numeroConta)) {
+                pesquisa = conta;
                 break;
             }
         }
-        if (conta == null) {
+        if (pesquisa == null) {
             System.out.println("Conta não encontrada!");
         }
-        return conta;
+        return pesquisa;
     }
 
     public Conta buscarContaPorLoginSenha(String login, String senha) {
         Conta pesquisa = null;
 
         for (Conta conta : contas) {
-            if (conta.getLogin().equalsIgnoreCase(login) && conta.getSenha().equalsIgnoreCase(senha)) {
+            if (conta.getLogin().equalsIgnoreCase(login)
+                    && conta.getSenha().equalsIgnoreCase(senha)) {
                 pesquisa = conta;
                 System.out.println("Sucesso!");
                 break;

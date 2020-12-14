@@ -44,9 +44,9 @@ public class TestaConta {
                 case "4":
                     numeroConta = JOptionPane.showInputDialog("-==Deposito==-"
                             + "\nInforme o n° da conta: ");
-                    retorno = Float.parseFloat(JOptionPane.showInputDialog("-==DEPOSITO===-"
+                    retorno = Float.parseFloat(JOptionPane.showInputDialog("-==DEPOSITO==-"
                             + "\nInforme o valor do deposito: \nR$"));
-                    negocio.realizaDeposito(numeroConta, retorno);
+                    System.out.println(negocio.realizaDeposito(numeroConta, retorno));
                     break;
                 case "5":
             }
